@@ -1,0 +1,48 @@
+:root {
+  color-scheme: dark;
+  --fondo:   #000000;
+  --cuerpo:  #d4d4d4;  /* texto corrido */
+  --h6:      #e4e4e4;  /* subtítulos de perícopa */
+  --h5:      #eeeeee;
+  --h4:      #f4f4f4;
+  --h3:      #fafafa;
+  --h2:      #ffffff;  /* título del libro */
+  --filete:  #5a5a5a;
+  --enlace:  #8ab4f8;
+  --visitado:#c58af9;
+}
+
+html, body { background-color: var(--fondo) !important; }
+
+/* Base: Word fuerza colores por clase e inline; los neutralizamos */
+body, body * {
+  color: var(--cuerpo) !important;
+  background-color: transparent !important;
+  border-color: #444 !important;
+}
+
+/* ---- Jerarquía de encabezados (el orden importa: va después de la base) ---- */
+h1, h1 * { color: var(--h2) !important; font-weight: 700 !important; }
+
+h2, h2 * { color: var(--h2) !important; font-weight: 700 !important; }
+h2 { border-bottom: 2px solid var(--filete) !important; padding-bottom: .2em; }
+
+h3, h3 * { color: var(--h3) !important; font-weight: 700 !important; letter-spacing: .02em; }
+h3 { border-bottom: 1px solid var(--filete) !important; padding-bottom: .15em; }
+
+h4, h4 * { color: var(--h4) !important; font-weight: 700 !important; }
+
+h5, h5 * { color: var(--h5) !important; font-weight: 600 !important; }
+
+h6, h6 * { color: var(--h6) !important; font-weight: 600 !important; font-style: italic !important; }
+
+/* Encabezados de Word: "Cap.1" y similares */
+p.MsoHeading9, p.MsoHeading9 * { color: var(--h4) !important; font-weight: 700 !important; font-variant: small-caps; }
+p.MsoHeading8, p.MsoHeading8 * { color: var(--h6) !important; }
+p.MsoHeading7, p.MsoHeading7 * { color: var(--h5) !important; font-weight: 600 !important; }
+
+/* Enlaces: solo los que tienen destino (los <a name> de los versículos no) */
+a[href], a[href] * { color: var(--enlace) !important; }
+a[href]:visited, a[href]:visited * { color: var(--visitado) !important; }
+
+::selection { background: #ffffff; color: #000000; }
